@@ -29,7 +29,7 @@ body{
   -webkit-text-fill-color:transparent;
 }
 
-/* 🔥 NEW PRO LOGO */
+/* LOGO */
 .logo{
   text-align:center;
   margin:15px;
@@ -41,12 +41,6 @@ body{
   border-radius:20px;
   background:rgba(255,255,255,0.05);
   box-shadow:0 0 20px #00eaff;
-  animation:glow 2s infinite alternate;
-}
-
-@keyframes glow{
-  from{box-shadow:0 0 10px #00eaff;}
-  to{box-shadow:0 0 25px #ff7b00;}
 }
 
 .logo-box h1{
@@ -55,7 +49,6 @@ body{
   background:linear-gradient(90deg,#00eaff,#ff7b00);
   -webkit-background-clip:text;
   -webkit-text-fill-color:transparent;
-  letter-spacing:2px;
 }
 
 /* GAMES */
@@ -81,7 +74,7 @@ button{
   color:white;
 }
 
-/* 🔥 FULL SCREEN ADS */
+/* FULL SCREEN ADS */
 #adBox{
   position:fixed;
   top:0;
@@ -105,15 +98,9 @@ button{
   border-radius:15px;
   text-align:center;
   box-shadow:0 0 20px #00eaff;
-  animation:pop 0.3s ease;
 }
 
-@keyframes pop{
-  from{transform:scale(0.7);opacity:0;}
-  to{transform:scale(1);opacity:1;}
-}
-
-/* TIMER BIG */
+/* TIMER */
 .timer{
   font-size:50px;
   font-weight:bold;
@@ -142,7 +129,7 @@ button{
   <div class="title">TEKNOVA GAMES</div>
 </div>
 
-<!-- 🔥 LOGO -->
+<!-- LOGO -->
 <div class="logo">
   <div class="logo-box">
     <h1>TEKNOVA GAMES</h1>
@@ -165,11 +152,11 @@ button{
 
 </div>
 
-<!-- 🔥 FULL SCREEN ADS -->
+<!-- ADS SCREEN -->
 <div id="adBox">
   <div class="ad-card">
     <h3>🎮 Advertisement</h3>
-    <p>Please wait to continue playing</p>
+    <p>Please wait...</p>
 
     <div class="timer" id="timer">35</div>
 
@@ -179,30 +166,35 @@ button{
 
 <script>
 
-let nextUrl="";
-let adActive=false;
+let adLink = "https://omg10.com/4/10857803"; // 🔥 YOUR ADS LINK
+let nextUrl = "";
+let adActive = false;
 
 function startAds(url){
 
   if(adActive) return;
-  adActive=true;
+  adActive = true;
 
-  nextUrl=url;
+  nextUrl = url;
 
+  // open ad in new tab
+  window.open(adLink, "_blank");
+
+  // show full screen lock
   document.getElementById("adBox").style.display="flex";
 
-  let time=35;
-  let timer=document.getElementById("timer");
-  let btn=document.getElementById("closeBtn");
+  let time = 35;
+  let timer = document.getElementById("timer");
+  let btn = document.getElementById("closeBtn");
 
   btn.style.display="none";
 
-  let interval=setInterval(()=>{
+  let interval = setInterval(()=>{
 
     time--;
-    timer.innerText=time;
+    timer.innerText = time;
 
-    if(time<=0){
+    if(time <= 0){
       clearInterval(interval);
       btn.style.display="block";
     }
@@ -213,7 +205,7 @@ function startAds(url){
 document.getElementById("closeBtn").onclick=function(){
   document.getElementById("adBox").style.display="none";
   adActive=false;
-  window.location.href=nextUrl;
+  window.location.href = nextUrl;
 };
 
 </script>
