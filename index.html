@@ -1,137 +1,316 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>TEKNOVA GAMES</title>
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+<meta charset="UTF-8">  
+<meta name="viewport" content="width=device-width, initial-scale=1.0">  
+<title>TEKNOVA GAMES</title>  
 
-<style>
-body{
-  margin:0;
-  font-family:Arial;
-  background:linear-gradient(180deg,#000428,#004e92);
-  color:white;
-}
+<style>  
+body{  
+  margin:0;  
+  font-family:Arial;  
+  background:linear-gradient(180deg,#0a0f1c,#05070d);  
+  color:white;  
+}  
 
-/* NAVBAR */
-.navbar{
-  display:flex;
-  justify-content:space-between;
-  padding:10px;
-  background:#000;
-}
+/* NAVBAR */  
+.navbar{  
+  display:flex;  
+  justify-content:space-between;  
+  align-items:center;  
+  padding:12px;  
+  background:#000;  
+}  
 
-#search{
-  padding:8px;
-  border:none;
-  border-radius:5px;
-}
+.title{  
+  font-size:20px;  
+  font-weight:bold;  
+  background:linear-gradient(90deg,#00eaff,#ff7b00);  
+  -webkit-background-clip:text;  
+  -webkit-text-fill-color:transparent;  
+}  
 
-/* LOGO */
-.logo{
-  text-align:center;
-  margin:10px;
-}
+#search{  
+  padding:6px;  
+  border:none;  
+  border-radius:5px;  
+}  
 
-.logo img{
-  width:90%;
-  max-width:400px;
-  border-radius:10px;
-}
+/* LOGO SECTION */  
+.logo{  
+  text-align:center;  
+  margin:15px 0;  
+}  
 
-/* GAMES */
-.games{
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:10px;
-  padding:10px;
-}
+.logo svg{  
+  width:140px;  
+  height:140px;  
+  filter: drop-shadow(0 0 10px #00eaff);  
+}  
 
-.game{
-  background:#021a3a;
-  padding:10px;
-  border-radius:10px;
-  text-align:center;
-  cursor:pointer;
-}
+/* GAME GRID */  
+.games{  
+  display:grid;  
+  grid-template-columns:repeat(2,1fr);  
+  gap:10px;  
+  padding:10px;  
+}  
 
-.game img{
-  width:100%;
-  border-radius:10px;
-}
+.game{  
+  background:#111827;  
+  padding:10px;  
+  border-radius:10px;  
+  text-align:center;  
+}  
 
-button{
-  margin-top:5px;
-  padding:8px;
-  border:none;
-  background:#ff9800;
-  color:white;
-  border-radius:5px;
-}
-</style>
-</head>
+.game img{  
+  width:100%;  
+  border-radius:10px;  
+}  
 
-<body>
+button{  
+  background:#ff7b00;  
+  border:none;  
+  padding:6px 10px;  
+  border-radius:5px;  
+  color:white;  
+}  
 
-<div class="navbar">
-  <h2>🎮 TEKNOVA</h2>
-  <input type="text" id="search" placeholder="Search game...">
-</div>
+/* GTA */  
+.gta-card{  
+  grid-column: span 2;  
+  background:#0f172a;  
+  padding:12px;  
+  border-radius:12px;  
+  text-align:center;  
+}  
 
-<div class="logo">
-  <img src="https://postimg.cc/qN0VrcCX">
-</div>
+.gta-card img{  
+  width:70%;  
+  max-width:220px;  
+  border-radius:10px;  
+}  
 
-<div class="games">
+.download-btn{  
+  background:#22c55e;  
+  color:black;  
+  padding:8px 12px;  
+  border-radius:8px;  
+  display:inline-block;  
+  margin-top:10px;  
+  text-decoration:none;  
+}  
 
-  <div class="game" onclick="playGame('https://html5games.com/Game/Helix-Jump')">
-    <img src="https://img.freepik.com/free-vector/game-background-design_23-2149007810.jpg">
-    <p>Helix Jump</p>
-    <button>Play</button>
-  </div>
+/* TEAM */  
+.team{  
+  padding:20px;  
+  text-align:center;  
+}  
 
-  <div class="game" onclick="playGame('https://html5games.com/Game/Flappy-Bird')">
-    <img src="https://img.freepik.com/free-vector/arcade-game-background_23-2148997820.jpg">
-    <p>Flappy Bird</p>
-    <button>Play</button>
-  </div>
+.team span{  
+  color:#ff7b00;  
+}  
 
-</div>
+.member{  
+  background:#111827;  
+  padding:15px;  
+  border-radius:15px;  
+  margin-top:10px;  
+}  
 
-<script>
+.circle{  
+  width:60px;  
+  height:60px;  
+  background:#ff7b00;  
+  border-radius:50%;  
+  display:flex;  
+  align-items:center;  
+  justify-content:center;  
+  margin:auto;  
+}  
 
-/* SEARCH */
-document.getElementById("search").addEventListener("keyup", function(){
-  let value = this.value.toLowerCase();
-  let games = document.querySelectorAll(".game");
+/* SUPPORT */  
+.support{  
+  text-align:center;  
+  padding:20px;  
+}  
 
-  games.forEach(game=>{
-    let name = game.innerText.toLowerCase();
-    game.style.display = name.includes(value) ? "block" : "none";
-  });
-});
+.whatsapp{  
+  background:#25D366;  
+  padding:10px;  
+  border-radius:8px;  
+  text-decoration:none;  
+  color:black;  
+}  
 
-/* AD LINK YAKO */
-let ad = "https://omg10.com/4/10857803";
+/* AD */  
+.ad-overlay{  
+  position:fixed;  
+  top:0;  
+  left:0;  
+  width:100%;  
+  height:100%;  
+  background:black;  
+  display:none;  
+  flex-direction:column;  
+  align-items:center;  
+  justify-content:center;  
+  z-index:9999;  
+}  
 
-/* SAFE PROFESSIONAL METHOD */
-function playGame(url){
+.timer{  
+  font-size:25px;  
+  margin-bottom:20px;  
+}  
 
-  // Fungua ad (user click)
-  let win = window.open(ad, "_blank");
+.close-btn{  
+  display:none;  
+  background:red;  
+  padding:10px;  
+  border:none;  
+  color:white;  
+  border-radius:5px;  
+}  
+</style>  
+</head>  
 
-  // Hakikisha haiblock
-  if(!win){
-    alert("Please allow popups to continue");
-  }
+<body>  
 
-  // Fungua game baada ya muda kidogo
-  setTimeout(()=>{
-    window.location.href = url;
-  },1500);
-}
+<div class="navbar">  
+  <div class="title">TEKNOVA GAMES</div>  
+  <input type="text" id="search" placeholder="Search">  
+</div>  
 
-</script>
+<!-- 🔥 AI LOGO (NO IMAGE LINK, ALWAYS WORKS) -->  
+<div class="logo">  
+<svg viewBox="0 0 200 200">  
+  <defs>  
+    <linearGradient id="g1" x1="0%" y1="0%" x2="100%" y2="100%">  
+      <stop offset="0%" stop-color="#00eaff"/>  
+      <stop offset="100%" stop-color="#ff7b00"/>  
+    </linearGradient>  
+  </defs>  
 
-</body>
-</html>
+  <circle cx="100" cy="100" r="80" fill="url(#g1)" opacity="0.15"/>  
+  <circle cx="100" cy="100" r="65" stroke="url(#g1)" stroke-width="4" fill="none"/>  
+
+  <text x="50%" y="52%" text-anchor="middle" fill="url(#g1)" font-size="28" font-weight="bold">
+    T
+  </text>  
+
+  <text x="50%" y="78%" text-anchor="middle" fill="white" font-size="10">
+    TEKNOVA GAMES
+  </text>  
+</svg>  
+</div>  
+
+<div class="games">  
+
+<div class="game" onclick="startAds('https://html5games.com/Game/Helix-Jump')">  
+<img src="https://img.freepik.com/free-vector/game-background-design_23-2149007810.jpg">  
+<p>Helix Jump</p>  
+<button>Play</button>  
+</div>  
+
+<div class="game" onclick="startAds('https://html5games.com/Game/Flappy-Bird')">  
+<img src="https://img.freepik.com/free-vector/arcade-game-background_23-2148997820.jpg">  
+<p>Flappy Bird</p>  
+<button>Play</button>  
+</div>  
+
+<div class="gta-card">  
+<img src="https://upload.wikimedia.org/wikipedia/en/c/c4/GTASABOX.jpg">  
+<h3>GTA SAN ANDREAS APK</h3>  
+
+<a class="download-btn" onclick="startAds('https://www.mediafire.com/file/jrfxybfgmx3ggau/GTA_San_Andreas_2.11.306_Mod_-_RisTechy.com.apk/file?dkey=qj07wxnkf99&r=1729')">  
+Download  
+</a>  
+</div>  
+
+</div>  
+
+<!-- TEAM -->  
+<div class="team">  
+<h2>MEET THE <span>TEAM</span></h2>  
+
+<div class="member">  
+<div class="circle">T</div>  
+<h3>TEKNOVA</h3>  
+<p>Founder</p>  
+</div>  
+
+<div class="member">  
+<div class="circle">N</div>  
+<h3>NOVA KING</h3>  
+<p>Co-Developer</p>  
+</div>  
+
+<div class="member">  
+<div class="circle">M</div>  
+<h3>MWENA SLIME</h3>  
+<p>Lead Developer</p>  
+</div>  
+
+</div>  
+
+<!-- SUPPORT -->  
+<div class="support">  
+<a class="whatsapp" href="https://wa.me/255611378027" target="_blank">WhatsApp Support</a>  
+</div>  
+
+<!-- AD SCREEN -->  
+<div class="ad-overlay" id="adBox">  
+  <div class="timer" id="timer">35</div>  
+  <button class="close-btn" id="closeBtn">X Close</button>  
+</div>  
+
+<script>  
+
+document.getElementById("search").addEventListener("keyup", function(){  
+let value = this.value.toLowerCase();  
+document.querySelectorAll(".game, .gta-card").forEach(g=>{  
+g.style.display = g.innerText.toLowerCase().includes(value) ? "block":"none";  
+});  
+});  
+
+let ad = "https://omg10.com/4/10857803";  
+let nextUrl = "";  
+
+function startAds(url){  
+  nextUrl = url;  
+  document.getElementById("adBox").style.display="flex";  
+
+  window.open(ad,"_blank");  
+
+  setTimeout(()=>{  
+    window.open(ad,"_blank");  
+  },3000);  
+
+  startTimer();  
+}  
+
+function startTimer(){  
+  let time = 35;  
+  let timer = document.getElementById("timer");  
+  let btn = document.getElementById("closeBtn");  
+
+  let interval = setInterval(()=>{  
+    time--;  
+    timer.innerText = time;  
+
+    if(time <= 0){  
+      clearInterval(interval);  
+      btn.style.display="block";  
+    }  
+  },1000);  
+}  
+
+document.getElementById("closeBtn").onclick=function(){  
+  document.getElementById("adBox").style.display="none";  
+  window.location.href = nextUrl;  
+};  
+
+</script>  
+
+</body>  
+  </html>
