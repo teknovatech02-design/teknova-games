@@ -1,316 +1,222 @@
-<!DOCTYPE html>  
-<html lang="en">  
-<head>  
-<meta charset="UTF-8">  
-<meta name="viewport" content="width=device-width, initial-scale=1.0">  
-<title>TEKNOVA GAMES</title>  
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TEKNOVA GAMES</title>
 
-<style>  
-body{  
-  margin:0;  
-  font-family:Arial;  
-  background:linear-gradient(180deg,#0a0f1c,#05070d);  
-  color:white;  
-}  
+<style>
+body{
+  margin:0;
+  font-family:Arial;
+  background:linear-gradient(180deg,#0a0f1c,#05070d);
+  color:white;
+}
 
-/* NAVBAR */  
-.navbar{  
-  display:flex;  
-  justify-content:space-between;  
-  align-items:center;  
-  padding:12px;  
-  background:#000;  
-}  
+/* NAVBAR */
+.navbar{
+  display:flex;
+  justify-content:space-between;
+  padding:12px;
+  background:#000;
+}
 
-.title{  
-  font-size:20px;  
-  font-weight:bold;  
-  background:linear-gradient(90deg,#00eaff,#ff7b00);  
-  -webkit-background-clip:text;  
-  -webkit-text-fill-color:transparent;  
-}  
+.title{
+  font-size:20px;
+  font-weight:bold;
+  background:linear-gradient(90deg,#00eaff,#ff7b00);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
 
-#search{  
-  padding:6px;  
-  border:none;  
-  border-radius:5px;  
-}  
+/* 🔥 NEW PRO LOGO */
+.logo{
+  text-align:center;
+  margin:15px;
+}
 
-/* LOGO SECTION */  
-.logo{  
-  text-align:center;  
-  margin:15px 0;  
-}  
+.logo-box{
+  display:inline-block;
+  padding:20px;
+  border-radius:20px;
+  background:rgba(255,255,255,0.05);
+  box-shadow:0 0 20px #00eaff;
+  animation:glow 2s infinite alternate;
+}
 
-.logo svg{  
-  width:140px;  
-  height:140px;  
-  filter: drop-shadow(0 0 10px #00eaff);  
-}  
+@keyframes glow{
+  from{box-shadow:0 0 10px #00eaff;}
+  to{box-shadow:0 0 25px #ff7b00;}
+}
 
-/* GAME GRID */  
-.games{  
-  display:grid;  
-  grid-template-columns:repeat(2,1fr);  
-  gap:10px;  
-  padding:10px;  
-}  
+.logo-box h1{
+  margin:0;
+  font-size:26px;
+  background:linear-gradient(90deg,#00eaff,#ff7b00);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  letter-spacing:2px;
+}
 
-.game{  
-  background:#111827;  
-  padding:10px;  
-  border-radius:10px;  
-  text-align:center;  
-}  
+/* GAMES */
+.games{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:10px;
+  padding:10px;
+}
 
-.game img{  
-  width:100%;  
-  border-radius:10px;  
-}  
+.game{
+  background:#111827;
+  padding:10px;
+  border-radius:10px;
+  text-align:center;
+}
 
-button{  
-  background:#ff7b00;  
-  border:none;  
-  padding:6px 10px;  
-  border-radius:5px;  
-  color:white;  
-}  
+button{
+  background:#ff7b00;
+  border:none;
+  padding:6px 10px;
+  border-radius:5px;
+  color:white;
+}
 
-/* GTA */  
-.gta-card{  
-  grid-column: span 2;  
-  background:#0f172a;  
-  padding:12px;  
-  border-radius:12px;  
-  text-align:center;  
-}  
+/* 🔥 FULL SCREEN ADS */
+#adBox{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.95);
+  display:none;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  z-index:99999;
+}
 
-.gta-card img{  
-  width:70%;  
-  max-width:220px;  
-  border-radius:10px;  
-}  
+/* AD CARD */
+.ad-card{
+  width:85%;
+  max-width:320px;
+  background:#111827;
+  padding:20px;
+  border-radius:15px;
+  text-align:center;
+  box-shadow:0 0 20px #00eaff;
+  animation:pop 0.3s ease;
+}
 
-.download-btn{  
-  background:#22c55e;  
-  color:black;  
-  padding:8px 12px;  
-  border-radius:8px;  
-  display:inline-block;  
-  margin-top:10px;  
-  text-decoration:none;  
-}  
+@keyframes pop{
+  from{transform:scale(0.7);opacity:0;}
+  to{transform:scale(1);opacity:1;}
+}
 
-/* TEAM */  
-.team{  
-  padding:20px;  
-  text-align:center;  
-}  
+/* TIMER BIG */
+.timer{
+  font-size:50px;
+  font-weight:bold;
+  color:#00eaff;
+  margin:15px 0;
+}
 
-.team span{  
-  color:#ff7b00;  
-}  
+/* BUTTON */
+#closeBtn{
+  display:none;
+  width:100%;
+  padding:10px;
+  background:#22c55e;
+  border:none;
+  border-radius:8px;
+  color:black;
+  font-weight:bold;
+}
+</style>
+</head>
 
-.member{  
-  background:#111827;  
-  padding:15px;  
-  border-radius:15px;  
-  margin-top:10px;  
-}  
+<body>
 
-.circle{  
-  width:60px;  
-  height:60px;  
-  background:#ff7b00;  
-  border-radius:50%;  
-  display:flex;  
-  align-items:center;  
-  justify-content:center;  
-  margin:auto;  
-}  
+<!-- NAV -->
+<div class="navbar">
+  <div class="title">TEKNOVA GAMES</div>
+</div>
 
-/* SUPPORT */  
-.support{  
-  text-align:center;  
-  padding:20px;  
-}  
+<!-- 🔥 LOGO -->
+<div class="logo">
+  <div class="logo-box">
+    <h1>TEKNOVA GAMES</h1>
+    <p>🔥 Ultimate Gaming Hub</p>
+  </div>
+</div>
 
-.whatsapp{  
-  background:#25D366;  
-  padding:10px;  
-  border-radius:8px;  
-  text-decoration:none;  
-  color:black;  
-}  
+<!-- GAMES -->
+<div class="games">
 
-/* AD */  
-.ad-overlay{  
-  position:fixed;  
-  top:0;  
-  left:0;  
-  width:100%;  
-  height:100%;  
-  background:black;  
-  display:none;  
-  flex-direction:column;  
-  align-items:center;  
-  justify-content:center;  
-  z-index:9999;  
-}  
+<div class="game" onclick="startAds('https://html5games.com/Game/Helix-Jump')">
+<p>Helix Jump</p>
+<button>Play</button>
+</div>
 
-.timer{  
-  font-size:25px;  
-  margin-bottom:20px;  
-}  
+<div class="game" onclick="startAds('https://html5games.com/Game/Flappy-Bird')">
+<p>Flappy Bird</p>
+<button>Play</button>
+</div>
 
-.close-btn{  
-  display:none;  
-  background:red;  
-  padding:10px;  
-  border:none;  
-  color:white;  
-  border-radius:5px;  
-}  
-</style>  
-</head>  
+</div>
 
-<body>  
+<!-- 🔥 FULL SCREEN ADS -->
+<div id="adBox">
+  <div class="ad-card">
+    <h3>🎮 Advertisement</h3>
+    <p>Please wait to continue playing</p>
 
-<div class="navbar">  
-  <div class="title">TEKNOVA GAMES</div>  
-  <input type="text" id="search" placeholder="Search">  
-</div>  
+    <div class="timer" id="timer">35</div>
 
-<!-- 🔥 AI LOGO (NO IMAGE LINK, ALWAYS WORKS) -->  
-<div class="logo">  
-<svg viewBox="0 0 200 200">  
-  <defs>  
-    <linearGradient id="g1" x1="0%" y1="0%" x2="100%" y2="100%">  
-      <stop offset="0%" stop-color="#00eaff"/>  
-      <stop offset="100%" stop-color="#ff7b00"/>  
-    </linearGradient>  
-  </defs>  
+    <button id="closeBtn">Continue</button>
+  </div>
+</div>
 
-  <circle cx="100" cy="100" r="80" fill="url(#g1)" opacity="0.15"/>  
-  <circle cx="100" cy="100" r="65" stroke="url(#g1)" stroke-width="4" fill="none"/>  
+<script>
 
-  <text x="50%" y="52%" text-anchor="middle" fill="url(#g1)" font-size="28" font-weight="bold">
-    T
-  </text>  
+let nextUrl="";
+let adActive=false;
 
-  <text x="50%" y="78%" text-anchor="middle" fill="white" font-size="10">
-    TEKNOVA GAMES
-  </text>  
-</svg>  
-</div>  
+function startAds(url){
 
-<div class="games">  
+  if(adActive) return;
+  adActive=true;
 
-<div class="game" onclick="startAds('https://html5games.com/Game/Helix-Jump')">  
-<img src="https://img.freepik.com/free-vector/game-background-design_23-2149007810.jpg">  
-<p>Helix Jump</p>  
-<button>Play</button>  
-</div>  
+  nextUrl=url;
 
-<div class="game" onclick="startAds('https://html5games.com/Game/Flappy-Bird')">  
-<img src="https://img.freepik.com/free-vector/arcade-game-background_23-2148997820.jpg">  
-<p>Flappy Bird</p>  
-<button>Play</button>  
-</div>  
+  document.getElementById("adBox").style.display="flex";
 
-<div class="gta-card">  
-<img src="https://upload.wikimedia.org/wikipedia/en/c/c4/GTASABOX.jpg">  
-<h3>GTA SAN ANDREAS APK</h3>  
+  let time=35;
+  let timer=document.getElementById("timer");
+  let btn=document.getElementById("closeBtn");
 
-<a class="download-btn" onclick="startAds('https://www.mediafire.com/file/jrfxybfgmx3ggau/GTA_San_Andreas_2.11.306_Mod_-_RisTechy.com.apk/file?dkey=qj07wxnkf99&r=1729')">  
-Download  
-</a>  
-</div>  
+  btn.style.display="none";
 
-</div>  
+  let interval=setInterval(()=>{
 
-<!-- TEAM -->  
-<div class="team">  
-<h2>MEET THE <span>TEAM</span></h2>  
+    time--;
+    timer.innerText=time;
 
-<div class="member">  
-<div class="circle">T</div>  
-<h3>TEKNOVA</h3>  
-<p>Founder</p>  
-</div>  
+    if(time<=0){
+      clearInterval(interval);
+      btn.style.display="block";
+    }
 
-<div class="member">  
-<div class="circle">N</div>  
-<h3>NOVA KING</h3>  
-<p>Co-Developer</p>  
-</div>  
+  },1000);
+}
 
-<div class="member">  
-<div class="circle">M</div>  
-<h3>MWENA SLIME</h3>  
-<p>Lead Developer</p>  
-</div>  
+document.getElementById("closeBtn").onclick=function(){
+  document.getElementById("adBox").style.display="none";
+  adActive=false;
+  window.location.href=nextUrl;
+};
 
-</div>  
+</script>
 
-<!-- SUPPORT -->  
-<div class="support">  
-<a class="whatsapp" href="https://wa.me/255611378027" target="_blank">WhatsApp Support</a>  
-</div>  
-
-<!-- AD SCREEN -->  
-<div class="ad-overlay" id="adBox">  
-  <div class="timer" id="timer">35</div>  
-  <button class="close-btn" id="closeBtn">X Close</button>  
-</div>  
-
-<script>  
-
-document.getElementById("search").addEventListener("keyup", function(){  
-let value = this.value.toLowerCase();  
-document.querySelectorAll(".game, .gta-card").forEach(g=>{  
-g.style.display = g.innerText.toLowerCase().includes(value) ? "block":"none";  
-});  
-});  
-
-let ad = "https://omg10.com/4/10857803";  
-let nextUrl = "";  
-
-function startAds(url){  
-  nextUrl = url;  
-  document.getElementById("adBox").style.display="flex";  
-
-  window.open(ad,"_blank");  
-
-  setTimeout(()=>{  
-    window.open(ad,"_blank");  
-  },3000);  
-
-  startTimer();  
-}  
-
-function startTimer(){  
-  let time = 35;  
-  let timer = document.getElementById("timer");  
-  let btn = document.getElementById("closeBtn");  
-
-  let interval = setInterval(()=>{  
-    time--;  
-    timer.innerText = time;  
-
-    if(time <= 0){  
-      clearInterval(interval);  
-      btn.style.display="block";  
-    }  
-  },1000);  
-}  
-
-document.getElementById("closeBtn").onclick=function(){  
-  document.getElementById("adBox").style.display="none";  
-  window.location.href = nextUrl;  
-};  
-
-</script>  
-
-</body>  
-  </html>
+</body>
+</html>
