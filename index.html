@@ -13,200 +13,282 @@ body{
   color:white;
 }
 
-/* NAVBAR */
-.navbar{
-  display:flex;
-  justify-content:space-between;
-  padding:12px;
-  background:#000;
-}
-
-.title{
-  font-size:20px;
-  font-weight:bold;
-  background:linear-gradient(90deg,#00eaff,#ff7b00);
-  -webkit-background-clip:text;
-  -webkit-text-fill-color:transparent;
-}
-
-/* LOGO */
-.logo{
+/* HEADER */
+.header{
   text-align:center;
-  margin:15px;
-}
-
-.logo-box{
-  display:inline-block;
   padding:20px;
-  border-radius:20px;
-  background:rgba(255,255,255,0.05);
-  box-shadow:0 0 20px #00eaff;
 }
 
-.logo-box h1{
-  margin:0;
-  font-size:26px;
+.header h1{
+  font-size:32px;
   background:linear-gradient(90deg,#00eaff,#ff7b00);
   -webkit-background-clip:text;
   -webkit-text-fill-color:transparent;
 }
 
-/* GAMES */
-.games{
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:10px;
+/* NAV */
+.nav{
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:8px;
   padding:10px;
 }
 
-.game{
-  background:#111827;
+.nav button{
   padding:10px;
-  border-radius:10px;
-  text-align:center;
-}
-
-button{
-  background:#ff7b00;
   border:none;
-  padding:6px 10px;
-  border-radius:5px;
+  border-radius:8px;
+  background:#111827;
   color:white;
+  border:1px solid #00eaff;
 }
 
-/* FULL SCREEN ADS */
+.nav button.active{
+  background:#00eaff;
+  color:black;
+}
+
+/* PAGE */
+.page{
+  display:none;
+  padding:15px;
+}
+
+.active{
+  display:block;
+}
+
+/* HOME STYLE */
+.card{
+  background:#111827;
+  padding:15px;
+  border-radius:12px;
+  margin-bottom:10px;
+  box-shadow:0 0 10px #00eaff;
+}
+
+/* DOWNLOAD */
+.download{
+  display:block;
+  padding:10px;
+  background:#22c55e;
+  color:black;
+  text-align:center;
+  border-radius:8px;
+  text-decoration:none;
+  margin-top:10px;
+}
+
+/* WHATSAPP BUTTON */
+.whatsapp{
+  position:fixed;
+  bottom:15px;
+  right:15px;
+  background:#25D366;
+  padding:12px;
+  border-radius:50px;
+  color:black;
+  text-decoration:none;
+  font-weight:bold;
+}
+
+/* ADS */
 #adBox{
   position:fixed;
   top:0;
   left:0;
   width:100%;
   height:100%;
-  background:rgba(0,0,0,0.95);
+  background:black;
   display:none;
-  flex-direction:column;
   align-items:center;
   justify-content:center;
-  z-index:99999;
 }
 
-/* AD CARD */
 .ad-card{
-  width:85%;
-  max-width:320px;
   background:#111827;
   padding:20px;
   border-radius:15px;
+  width:80%;
   text-align:center;
-  box-shadow:0 0 20px #00eaff;
 }
 
-/* TIMER */
-.timer{
-  font-size:50px;
-  font-weight:bold;
-  color:#00eaff;
-  margin:15px 0;
-}
-
-/* BUTTON */
-#closeBtn{
-  display:none;
-  width:100%;
-  padding:10px;
-  background:#22c55e;
-  border:none;
-  border-radius:8px;
-  color:black;
-  font-weight:bold;
+button{
+  cursor:pointer;
 }
 </style>
 </head>
 
 <body>
 
+<div class="header">
+  <h1>TEKNOVA GAMES</h1>
+  <p>🔥 Ultimate Gaming Experience Platform</p>
+</div>
+
 <!-- NAV -->
-<div class="navbar">
-  <div class="title">TEKNOVA GAMES</div>
+<div class="nav">
+  <button class="active" onclick="openPage('home',this)">Home</button>
+  <button onclick="openPage('ppsspp',this)">PPSSPP</button>
+  <button onclick="openPage('ps2',this)">PS2</button>
+  <button onclick="openPage('apk',this)">APK</button>
+  <button onclick="openPage('help',this)">Help</button>
 </div>
 
-<!-- LOGO -->
-<div class="logo">
-  <div class="logo-box">
-    <h1>TEKNOVA GAMES</h1>
-    <p>🔥 Ultimate Gaming Hub</p>
-  </div>
+<!-- HOME -->
+<div id="home" class="page active">
+
+<div class="card">
+<h2>🔥 Welcome to TEKNOVA GAMES</h2>
+<p>
+Karibu kwenye jukwaa la kisasa la michezo ambalo limeundwa kwa ajili ya wapenzi wa gaming duniani.
+Hapa utapata michezo ya PPSSPP, PS2 (AetherSX2) na APK games zote katika sehemu moja.
+Website hii imejengwa kwa ubunifu mkubwa kuhakikisha experience yako ni ya kiwango cha juu kabisa.
+</p>
 </div>
 
-<!-- GAMES -->
-<div class="games">
-
-<div class="game" onclick="startAds('https://html5games.com/Game/Helix-Jump')">
-<p>Helix Jump</p>
-<button>Play</button>
+<div class="card">
+<h3>👑 Developers</h3>
+<p>
+Mradi huu umetengenezwa na timu ya wataalamu wa teknolojia:
+<br>• TEKNOVA
+<br>• MWENA TZ
+<br>• NOVA KING
+</p>
 </div>
 
-<div class="game" onclick="startAds('https://html5games.com/Game/Flappy-Bird')">
-<p>Flappy Bird</p>
-<button>Play</button>
+<div class="card">
+<h3>💬 WhatsApp Support</h3>
+<p>Bonyeza hapa kupata msaada moja kwa moja</p>
+<a class="download" href="https://wa.me/255611378027">Chat WhatsApp</a>
 </div>
 
 </div>
 
-<!-- ADS SCREEN -->
+<!-- PPSSPP -->
+<div id="ppsspp" class="page">
+
+<div class="card">
+<h2>🎮 PPSSPP GOLD GAMES</h2>
+<p>
+Ili kucheza games hizi lazima uwe na PPSSPP Emulator.
+Pakua hapa chini 👇
+</p>
+
+<a class="download" href="https://www.mediafire.com/file/o814xggqmcdh5g4/ppsspp-gold_1.19.3-RisTechy.com.apk/file?dkey=cumon27af0c&r=963">
+📥 Download PPSSPP GOLD (30MB)
+</a>
+
+<p>
+⚠️ Bila hii app huwezi kucheza PSP games.
+> NOVA KING 👑
+</p>
+</div>
+
+</div>
+
+<!-- PS2 -->
+<div id="ps2" class="page">
+
+<div class="card">
+<h2>🎮 AETHER SX2 (PS2 GAMES)</h2>
+<p>
+Ili kucheza PS2 games lazima uwe na AetherSX2 emulator.
+Pakua app hapa chini 👇
+</p>
+
+<a class="download" href="https://www.mediafire.com/file/7o8ypzk00uyd4u5/Aethersx2-v1-5-4248_-_RisTechy.com.apk/file?dkey=tlyijui8s1y&r=1001">
+📥 Download AetherSX2 APK
+</a>
+
+<p>⚠️ Hii ni lazima kwa PS2 gaming experience</p>
+</div>
+
+</div>
+
+<!-- APK -->
+<div id="apk" class="page">
+
+<div class="card">
+<h2>📱 APK GAMES</h2>
+<p>
+Hapa utaweka APK games zako zote. (Sehemu hii ni yako kujaza)
+</p>
+</div>
+
+</div>
+
+<!-- HELP -->
+<div id="help" class="page">
+
+<div class="card">
+<h2>🆘 HELP CENTER</h2>
+<p>
+Karibu kwenye sehemu ya msaada. Hapa utapata mawasiliano na maelezo muhimu kuhusu website.
+</p>
+
+<h3>📞 Contact Numbers</h3>
+<p>
+✔ 0772991908<br>
+✔ +255 611 378 027
+</p>
+
+<h3>🔥 About Website</h3>
+<p>
+TEKNOVA GAMES ni platform ya gaming inayokupa access ya PPSSPP, PS2 na APK games.
+Lengo ni kufanya gaming iwe rahisi, haraka na bure kwa kila mtu.
+</p>
+
+<h3>⚠️ Important</h3>
+<p>
+Kabla ya kucheza games lazima uwe na emulator sahihi:
+<br>• PPSSPP kwa PSP games
+<br>• AetherSX2 kwa PS2 games
+</p>
+</div>
+
+</div>
+
+<!-- ADS -->
 <div id="adBox">
   <div class="ad-card">
-    <h3>🎮 Advertisement</h3>
+    <h3>Loading Ad...</h3>
     <p>Please wait...</p>
-
-    <div class="timer" id="timer">35</div>
-
-    <button id="closeBtn">Continue</button>
+    <button onclick="go()">Continue</button>
   </div>
 </div>
+
+<!-- WHATSAPP -->
+<a class="whatsapp" href="https://wa.me/255611378027">WhatsApp</a>
 
 <script>
 
-let adLink = "https://omg10.com/4/10857803"; // 🔥 YOUR ADS LINK
-let nextUrl = "";
-let adActive = false;
+let adLink="https://omg10.com/4/10857803";
+let target="";
 
-function startAds(url){
+/* PAGE SWITCH */
+function openPage(id,btn){
 
-  if(adActive) return;
-  adActive = true;
+  document.querySelectorAll(".page").forEach(p=>p.classList.remove("active"));
+  document.getElementById(id).classList.add("active");
 
-  nextUrl = url;
-
-  // open ad in new tab
-  window.open(adLink, "_blank");
-
-  // show full screen lock
-  document.getElementById("adBox").style.display="flex";
-
-  let time = 35;
-  let timer = document.getElementById("timer");
-  let btn = document.getElementById("closeBtn");
-
-  btn.style.display="none";
-
-  let interval = setInterval(()=>{
-
-    time--;
-    timer.innerText = time;
-
-    if(time <= 0){
-      clearInterval(interval);
-      btn.style.display="block";
-    }
-
-  },1000);
+  document.querySelectorAll(".nav button").forEach(b=>b.classList.remove("active"));
+  btn.classList.add("active");
 }
 
-document.getElementById("closeBtn").onclick=function(){
+/* ADS ON DOWNLOAD */
+function download(url){
+  target=url;
+  window.open(adLink,"_blank");
+  document.getElementById("adBox").style.display="flex";
+}
+
+/* FINISH */
+function go(){
   document.getElementById("adBox").style.display="none";
-  adActive=false;
-  window.location.href = nextUrl;
-};
+  window.location.href=target;
+}
 
 </script>
 
