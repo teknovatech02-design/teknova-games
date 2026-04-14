@@ -1,291 +1,94 @@
+
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>TEKNOVA GAMES</title>
-
-<style>
-body{
-  margin:0;
-  font-family:Arial;
-  background:linear-gradient(180deg,#0a0f1c,#05070d);
-  color:white;
-}
-
-/* HEADER */
-.header{
-  text-align:center;
-  padding:20px;
-}
-
-.header h1{
-  font-size:32px;
-  background:linear-gradient(90deg,#00eaff,#ff7b00);
-  -webkit-background-clip:text;
-  -webkit-text-fill-color:transparent;
-}
-
-/* MENU */
-.menu{
-  display:flex;
-  flex-wrap:wrap;
-  justify-content:center;
-  gap:8px;
-  padding:10px;
-}
-
-.menu button{
-  padding:10px;
-  border:none;
-  border-radius:8px;
-  background:#111827;
-  color:white;
-  transition:0.3s;
-}
-
-.menu button.active{
-  box-shadow:0 0 15px #00eaff;
-  border:1px solid #00eaff;
-}
-
-/* SECTION */
-.section{
-  display:none;
-  padding:15px;
-}
-
-.section.active{
-  display:block;
-}
-
-/* BOX STYLE */
-.box{
-  background:#111827;
-  padding:15px;
-  margin:10px 0;
-  border-radius:12px;
-  box-shadow:0 0 10px rgba(0,0,0,0.5);
-}
-
-/* DOWNLOAD */
-.download{
-  display:inline-block;
-  padding:10px;
-  background:#22c55e;
-  color:black;
-  border-radius:8px;
-  text-decoration:none;
-  margin-top:8px;
-  font-weight:bold;
-}
-
-/* WHATSAPP BUTTON */
-.whatsapp{
-  display:block;
-  text-align:center;
-  padding:12px;
-  background:#25D366;
-  color:black;
-  border-radius:10px;
-  text-decoration:none;
-  font-weight:bold;
-}
-
-/* LANGUAGE */
-.lang{
-  text-align:center;
-  margin:10px;
-}
-
-.lang button{
-  margin:5px;
-  padding:8px;
-  border:none;
-  border-radius:6px;
-  background:#111827;
-  color:white;
-}
-
-/* FOOTER */
-footer{
-  text-align:center;
-  padding:20px;
-  color:#aaa;
-}
-</style>
+<link rel="stylesheet" href="style.css">
+<script src="script.js"></script>
 </head>
 
 <body>
 
 <div class="header">
-  <h1>TEKNOVA GAMES</h1>
-  <p>🔥 Ultimate Gaming Platform</p>
+  <div class="logo-title">TEKNOVA GAMES</div>
+  <p>🔥 Ultimate Gaming Universe</p>
 </div>
 
 <!-- LANGUAGE -->
-<div class="lang">
-  <button onclick="lang('en')">English</button>
-  <button onclick="lang('sw')">Kiswahili</button>
+<div style="text-align:center">
+<button onclick="setLang('en')">English</button>
+<button onclick="setLang('sw')">Kiswahili</button>
 </div>
 
-<!-- MENU -->
-<div class="menu">
-  <button onclick="show('home',this)" class="active">Home</button>
-  <button onclick="show('ppsspp',this)">PPSSPP</button>
-  <button onclick="show('ps2',this)">PS2</button>
-  <button onclick="show('apk',this)">APK</button>
-  <button onclick="show('help',this)">Help</button>
+<!-- NAV -->
+<div class="nav">
+<a href="index.html" class="active">Home</a>
+<a href="ppsspp.html">PPSSPP</a>
+<a href="ps2.html">PS2</a>
+<a href="apk.html">APK</a>
+<a href="help.html">Help</a>
 </div>
 
-<!-- HOME -->
-<div id="home" class="section active">
+<!-- HOME CONTENT -->
+<div class="box">
 
-<div class="box" id="home_en">
-<h2>Welcome to TEKNOVA GAMES 🎮</h2>
+<div class="en">
+<h2>Welcome to TEKNOVA GAMES 🔥</h2>
 <p>
-TEKNOVA GAMES is a powerful gaming platform created for all gamers who love PSP, PS2, and Android APK games.
-We bring everything in one place with fast downloads, smooth experience, and easy navigation.
-</p>
-
-<p>
-🔥 This website is built to give users the best gaming experience with clean design, fast access, and updated resources.
+This is a powerful gaming platform built for gamers who love PPSSPP, PS2 Android (AetherSX2), and APK games. Our goal is to bring all games in one place with smooth downloading experience and modern design.
 </p>
 
 <h3>Developers</h3>
-<p>👑 TEKNOVA<br>👑 MWENA TZ<br>👑 NOVA KING</p>
-
-<h3>Contact</h3>
-<a class="whatsapp" href="https://wa.me/255611378027">WhatsApp Us</a>
-</div>
-
-<div class="box" id="home_sw" style="display:none">
-<h2>Karibu TEKNOVA GAMES 🎮</h2>
 <p>
-TEKNOVA GAMES ni jukwaa la michezo kwa ajili ya PPSSPP, PS2 na APK games.
+This website is created by a strong development team:
+<br>🔥 TEKNOVA
+<br>🔥 MWENA TZ
+<br>🔥 NOVA KING
+</p>
+
+<h3>Why This Website?</h3>
+<p>
+✔ Fast downloads  
+✔ Clean design  
+✔ Mobile friendly  
+✔ Gaming focused platform  
+✔ Easy navigation  
 </p>
 
 <p>
-🔥 Tunatoa michezo kwa urahisi, haraka na huduma bora kwa wachezaji wote.
+💬 WhatsApp Contact: Click below to chat instantly
+</p>
+
+<a class="whatsapp" href="https://wa.me/255611378027">Chat on WhatsApp</a>
+
+</div>
+
+<div class="sw" style="display:none">
+<h2>Karibu TEKNOVA GAMES 🔥</h2>
+<p>
+Hii ni platform ya michezo inayokuwezesha kupakua na kucheza games za PPSSPP, PS2 na APK kwa urahisi.
 </p>
 
 <h3>Watengenezaji</h3>
-<p>👑 TEKNOVA<br>👑 MWENA TZ<br>👑 NOVA KING</p>
-
-<h3>Mawasiliano</h3>
-<a class="whatsapp" href="https://wa.me/255611378027">Wasiliana Nasi</a>
-</div>
-
-</div>
-
-<!-- PPSSPP -->
-<div id="ppsspp" class="section">
-
-<div class="box">
-<h2>🎮 PPSSPP GOLD GAMES</h2>
 <p>
-Ili kucheza PPSSPP games lazima uwe na app ya PPSSPP GOLD.
+🔥 TEKNOVA  
+🔥 MWENA TZ  
+🔥 NOVA KING  
 </p>
 
-<p>📥 App Required (Mandatory):</p>
-
-<a class="download" href="https://www.mediafire.com/file/o814xggqmcdh5g4/ppsspp-gold_1.19.3-RisTechy.com.apk/file?dkey=cumon27af0c&r=963">
-Download PPSSPP GOLD (30MB)
-</a>
-
-<p>👉 NOVA KING 👑</p>
-</div>
-
-</div>
-
-<!-- PS2 -->
-<div id="ps2" class="section">
-
-<div class="box">
-<h2>🎮 PS2 (AETHER SX2)</h2>
+<h3>Kwanini Tovuti Hii?</h3>
 <p>
-Ili kucheza PS2 games lazima uwe na AetherSX2 emulator.
+✔ Upakuaji wa haraka  
+✔ Design ya kisasa  
+✔ Rahisi kutumia  
+✔ Inafanya kazi simu zote  
 </p>
 
-<a class="download" href="https://www.mediafire.com/file/7o8ypzk00uyd4u5/Aethersx2-v1-5-4248_-_RisTechy.com.apk/file?dkey=tlyijui8s1y&r=1001">
-Download AetherSX2 (PS2 Emulator)
-</a>
+<a class="whatsapp" href="https://wa.me/255611378027">Tuma Ujumbe WhatsApp</a>
 
 </div>
 
 </div>
-
-<!-- APK -->
-<div id="apk" class="section">
-
-<div class="box">
-<h2>📱 APK GAMES</h2>
-<p>
-Hapa utaweka APK games zako zote.
-</p>
-</div>
-
-</div>
-
-<!-- HELP -->
-<div id="help" class="section">
-
-<div class="box">
-<h2>HELP CENTER 🆘</h2>
-
-<p>
-📞 Contact Numbers:
-</p>
-
-<a class="whatsapp" href="https://wa.me/255772991908">0772991908 - WhatsApp</a>
-<br><br>
-<a class="whatsapp" href="https://wa.me/255611378027">255611378027 - WhatsApp</a>
-
-<h3>Important Info</h3>
-<p>
-✔ PPSSPP games require PPSSPP GOLD app<br>
-✔ PS2 games require AetherSX2 emulator<br>
-✔ APK games install directly<br>
-✔ Always download apps before playing games
-</p>
-
-<p>
-🔥 TEKNOVA GAMES is built for gamers who want everything in one place.
-</p>
-
-</div>
-
-</div>
-
-<footer>
-© NOVA KING 👑 2026
-</footer>
-
-<script>
-
-/* MENU ACTIVE */
-function show(id,btn){
-
-  document.querySelectorAll(".section").forEach(s=>s.classList.remove("active"));
-  document.getElementById(id).classList.add("active");
-
-  document.querySelectorAll(".menu button").forEach(b=>b.classList.remove("active"));
-  btn.classList.add("active");
-}
-
-/* LANGUAGE */
-function lang(type){
-
-  if(type==='en'){
-    document.getElementById("home_en").style.display="block";
-    document.getElementById("home_sw").style.display="none";
-  }else{
-    document.getElementById("home_en").style.display="none";
-    document.getElementById("home_sw").style.display="block";
-  }
-}
-
-</script>
 
 </body>
 </html>
