@@ -1,0 +1,73 @@
+body{
+  margin:0;
+  font-family:Arial;
+  background:linear-gradient(180deg,#0a0f1c,#05070d);
+  color:white;
+}
+
+/* HEADER */
+.header{
+  text-align:center;
+  padding:20px;
+}
+
+.logo-title{
+  font-size:30px;
+  font-weight:bold;
+  background:linear-gradient(90deg,#00eaff,#ff7b00);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+
+/* NAV */
+.nav{
+  display:flex;
+  justify-content:center;
+  gap:8px;
+  flex-wrap:wrap;
+  padding:10px;
+}
+
+.nav a{
+  text-decoration:none;
+  color:white;
+  padding:10px;
+  background:#111827;
+  border-radius:8px;
+  border:1px solid #00eaff;
+}
+
+/* ACTIVE PAGE GLOW */
+.active{
+  box-shadow:0 0 15px #00eaff;
+}
+
+/* BOX */
+.box{
+  background:#111827;
+  padding:15px;
+  margin:10px;
+  border-radius:12px;
+}
+
+/* DOWNLOAD */
+.download{
+  display:block;
+  margin-top:10px;
+  padding:10px;
+  background:#22c55e;
+  color:black;
+  text-align:center;
+  border-radius:8px;
+  text-decoration:none;
+}
+
+/* WHATSAPP BOX */
+.whatsapp{
+  background:#25D366;
+  padding:10px;
+  text-align:center;
+  border-radius:8px;
+  display:block;
+  color:black;
+}a
